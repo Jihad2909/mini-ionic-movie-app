@@ -1,0 +1,7 @@
+{
+  "name": "mini-ionic-movie-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
