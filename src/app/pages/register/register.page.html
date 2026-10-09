@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Inscription</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="photo-container ion-text-center ion-margin-bottom">
+    <ion-avatar class="profile-avatar">
+      <img
+        [src]="photoUrl || 'assets/icon/favicon.png'"
+        alt="Photo de profil"
+      />
+    </ion-avatar>
+    <ion-button fill="clear" size="small" (click)="takePhoto()">
+      <ion-icon name="camera-outline" slot="start"></ion-icon>
+      {{ photoUrl ? 'Changer la photo' : 'Prendre une photo' }}
+    </ion-button>
+  </div>
+
+  <form (ngSubmit)="onRegister()">
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input type="text" [(ngModel)]="nom" name="nom" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Prénom</ion-label>
+      <ion-input
+        type="text"
+        [(ngModel)]="prenom"
+        name="prenom"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Âge</ion-label>
+      <ion-input
+        type="number"
+        [(ngModel)]="age"
+        name="age"
+        required
+        min="1"
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <div class="ion-margin-top">
+      <ion-button expand="block" type="submit" color="primary">
+        S'inscrire
+      </ion-button>
+    </div>
+  </form>
+
+  <div class="ion-text-center ion-margin-top">
+    <ion-button fill="clear" routerLink="/login">
+      Déjà un compte ? Se connecter
+    </ion-button>
+  </div>
+</ion-content>

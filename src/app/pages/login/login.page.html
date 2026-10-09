@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Connexion</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="header-logo ion-text-center ion-margin-bottom ion-margin-top">
+    <ion-icon
+      name="film-outline"
+      color="primary"
+      style="font-size: 80px"
+    ></ion-icon>
+    <h2>Movie App</h2>
+    <p>Connectez-vous pour gérer votre playlist</p>
+  </div>
+
+  <form (ngSubmit)="onLogin()">
+    <ion-item>
+      <ion-label position="floating">Email</ion-label>
+      <ion-input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      ></ion-input>
+    </ion-item>
+
+    <div class="ion-margin-top">
+      <ion-button expand="block" type="submit" color="primary">
+        Se connecter
+      </ion-button>
+    </div>
+  </form>
+
+  <div class="ion-text-center ion-margin-top">
+    <ion-button fill="clear" routerLink="/register">
+      Pas encore de compte ? S'inscrire
+    </ion-button>
+  </div>
+</ion-content>
